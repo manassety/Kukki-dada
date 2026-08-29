@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday, Kukki Dada ❤️ | For Major Kumud Sety</title>
+  <meta name="description" content="A cinematic 4-page birthday surprise tribute from a younger brother to Major Kumud Sety (Kukki Dada).">
+  
+  <!-- Google Fonts: Cinzel & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800;900&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Floating Audio Controls & Ambient Background Canvas -->
+  <canvas id="particleCanvas"></canvas>
+  <div class="tricolor-ambient-streaks" aria-hidden="true"></div>
+  <div class="cinematic-vignette" aria-hidden="true"></div>
+
+  <!-- Audio Element -->
+  <audio id="bgMusic" loop preload="auto">
+    <source src="assets/birthday-song.mp3" type="audio/mpeg">
+    <source src="assets/birthday-song.mp3" type="audio/wav">
+  </audio>
+
+  <!-- Mute / Unmute Floating Toggle -->
+  <button id="musicToggle" class="music-toggle-btn hidden" aria-label="Toggle Audio">
+    <div class="eq-bars">
+      <span class="bar bar1"></span>
+      <span class="bar bar2"></span>
+      <span class="bar bar3"></span>
+      <span class="bar bar4"></span>
+    </div>
+    <span class="music-label">MUSIC</span>
+  </button>
+
+  <!-- Page Navigation Container -->
+  <main id="appContainer">
+
+    <!-- ==================== STARTER PAGE (PAGE 0) ==================== -->
+    <section id="page0" class="page-section active-page">
+      <div class="page-content page0-content">
+        <div class="starter-badge" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="1.5">
+            <polygon points="12,2 15,9 22,9 17,14 19,21 12,17 5,21 7,14 2,9 9,9" fill="rgba(229, 193, 88, 0.25)" stroke="#e5c158"/>
+          </svg>
+        </div>
+
+        <h3 id="p0Line1" class="starter-text fade-text delay-1">A Special Surprise Awaits...</h3>
+        <h1 id="p0Line2" class="starter-title fade-text delay-2">For My Kukki Dada ❤️</h1>
+
+        <div class="p0-action-wrap fade-text delay-3">
+          <button id="openSurpriseBtn" class="btn-primary open-surprise-btn">
+            <span>OPEN THE SURPRISE ✨</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== PAGE 1: OPENING ==================== -->
+    <section id="page1" class="page-section">
+      <div class="page-content page1-content">
+        <div class="army-star-badge" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5">
+            <polygon points="12,2 15,9 22,9 17,14 19,21 12,17 5,21 7,14 2,9 9,9" fill="rgba(212, 175, 55, 0.2)" stroke="#e5c158"/>
+          </svg>
+        </div>
+
+        <h3 id="p1Line1" class="fade-text delay-1">For Someone I Look Up To...</h3>
+        <h1 id="p1Line2" class="fade-text delay-2">My Brother. My Guide. My Kukki Dada. ❤️</h1>
+        <h2 id="p1Line3" class="fade-text delay-3">Kumud Sety</h2>
+        <div id="p1Line4" class="birthday-glow-box fade-text delay-4">
+          <span class="glow-text">Happy Birthday, Kukki Dada! 🎂</span>
+        </div>
+
+        <div class="p1-action-wrap fade-text delay-5">
+          <button id="startJourneyBtn" class="btn-primary cinematic-glow-btn">
+            <span>Begin The Journey</span>
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== PAGE 2: THE MEMORIES ==================== -->
+    <section id="page2" class="page-section">
+      <div class="page-content page2-content">
+        <header class="section-header">
+          <span class="subtitle-tag">CHAPTER 01 • THE JOURNEY</span>
+          <h2 class="section-title">Memories With Kukki Dada 📸</h2>
+        </header>
+
+        <!-- 3D Circular Orbit Photo Carousel -->
+        <div class="carousel-3d-wrapper">
+          <button class="carousel-nav-btn prev-btn" id="prevPhotoBtn" aria-label="Previous Photo">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M15 18l-6-6 6-6"/>
+            </svg>
+          </button>
+
+          <div class="carousel-stage" id="carouselStage">
+            <div class="carousel-track" id="carouselTrack">
+              <div class="carousel-card" data-index="0">
+                <img src="assets/photos/photo1.jpg" alt="Memory with Kukki Dada 1" loading="eager">
+                <div class="card-caption">Side by Side • Unbreakable Bond</div>
+              </div>
+              <div class="carousel-card" data-index="1">
+                <img src="assets/photos/photo2.jpg" alt="Memory with Kukki Dada 2" loading="eager">
+                <div class="card-caption">Golden Memories • Kukki Dada</div>
+              </div>
+              <div class="carousel-card" data-index="2">
+                <img src="assets/photos/photo3.jpg" alt="Memory with Kukki Dada 3" loading="eager">
+                <div class="card-caption">Proud & Honorable • Lieutenant Kumud Sety</div>
+              </div>
+              <div class="carousel-card" data-index="3">
+                <img src="assets/photos/photo4.jpg" alt="Memory with Kukki Dada 4" loading="eager">
+                <div class="card-caption">Smiles & Laughter • Sibling Love</div>
+              </div>
+              <div class="carousel-card" data-index="4">
+                <img src="assets/photos/photo5.jpg" alt="Memory with Kukki Dada 5" loading="eager">
+                <div class="card-caption">Special Times • Always Together</div>
+              </div>
+              <div class="carousel-card" data-index="5">
+                <img src="assets/photos/photo6.jpg" alt="Memory with Kukki Dada 6" loading="eager">
+                <div class="card-caption">Courage & Strength • Our Hero</div>
+              </div>
+              <div class="carousel-card" data-index="6">
+                <img src="assets/photos/photo7.jpg" alt="Memory with Kukki Dada 7" loading="eager">
+                <div class="card-caption">Guide & Mentor • Kukki Dada</div>
+              </div>
+              <div class="carousel-card" data-index="7">
+                <img src="assets/photos/photo8.jpg" alt="Memory with Kukki Dada 8" loading="eager">
+                <div class="card-caption">Major Kumud Sety • Always Making Us Proud</div>
+              </div>
+            </div>
+          </div>
+
+          <button class="carousel-nav-btn next-btn" id="nextPhotoBtn" aria-label="Next Photo">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M9 5l7 7-7 7"/>
+            </svg>
+          </button>
+        </div>
+
+        <div class="carousel-dots" id="carouselDots"></div>
+
+        <div class="p2-footer-text">
+          <p class="memories-line1">"Some memories never get old... ❤️"</p>
+          <p class="memories-line2">"Especially when they're with Kukki Dada."</p>
+          
+          <button id="goToPage3Btn" class="btn-primary cinematic-glow-btn margin-top-md">
+            <span>There's Something I Want To Say... 💌</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== PAGE 3: A LETTER FOR KUKKI DADA ==================== -->
+    <section id="page3" class="page-section">
+      <div class="page-content page3-content">
+        <header class="section-header">
+          <span class="subtitle-tag">CHAPTER 02 • FROM THE HEART</span>
+          <h2 class="section-title">A Letter For Kukki Dada 💌</h2>
+        </header>
+
+        <div class="letter-card-container">
+          <div class="letter-wax-seal" id="waxSeal">
+            <svg viewBox="0 0 100 100" width="60" height="60">
+              <circle cx="50" cy="50" r="45" fill="#8b1c1c" stroke="#d4af37" stroke-width="3"/>
+              <circle cx="50" cy="50" r="38" fill="none" stroke="rgba(252,228,150,0.4)" stroke-width="1.5" stroke-dasharray="4,2"/>
+              <text x="50" y="58" font-family="'Cinzel', serif" font-weight="700" font-size="22" fill="#fce496" text-anchor="middle">KS</text>
+            </svg>
+          </div>
+
+          <div class="letter-envelope-wrapper" id="letterWrapper">
+            <div class="letter-header-preview" id="letterPreviewHeader">
+              <span>Dear Kukki Dada...</span>
+            </div>
+
+            <div class="letter-paper" id="letterPaper">
+              <div class="letter-inner-content">
+                <div id="typewriterTarget" class="typing-text-body"></div>
+                <span id="typingCursor" class="blinking-cursor">|</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Post Letter Continuation -->
+        <div id="p3PostLetter" class="post-letter-container hidden-opacity">
+          <p class="story-continue-text">"But the story doesn't end here..."</p>
+          <p class="surprise-text">"One final surprise awaits you."</p>
+          
+          <button id="goToPage4Btn" class="btn-primary cinematic-glow-btn margin-top-md">
+            <span>Continue →</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== PAGE 4: KEEP RISING ==================== -->
+    <section id="page4" class="page-section">
+      <div class="page-content page4-content">
+        
+        <!-- Symbolic Stem & Lotus SVG Container -->
+        <div class="lotus-stage-wrapper">
+          <svg id="lotusSvg" viewBox="0 0 400 500" width="360" height="450" class="lotus-svg">
+            <defs>
+              <!-- Gradients for Stem, Leaves, and Lotus Petals -->
+              <linearGradient id="stemGrad" x1="0" y1="1" x2="0" y2="0">
+                <stop offset="0%" stop-color="#142116"/>
+                <stop offset="60%" stop-color="#2d4a31"/>
+                <stop offset="100%" stop-color="#4e7c55"/>
+              </linearGradient>
+
+              <linearGradient id="leafGradLeft" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#4e7c55"/>
+                <stop offset="100%" stop-color="#1b2f1f"/>
+              </linearGradient>
+
+              <linearGradient id="leafGradRight" x1="1" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#5c9164"/>
+                <stop offset="100%" stop-color="#1b2f1f"/>
+              </linearGradient>
+
+              <!-- Golden Lotus Petal Gradient with Subtle Saffron/Tricolor Warmth -->
+              <linearGradient id="petalGradOuter" x1="0.5" y1="1" x2="0.5" y2="0">
+                <stop offset="0%" stop-color="#8a5316"/>
+                <stop offset="40%" stop-color="#d49b29"/>
+                <stop offset="85%" stop-color="#fcedb4"/>
+                <stop offset="100%" stop-color="#ffffff"/>
+              </linearGradient>
+
+              <linearGradient id="petalGradInner" x1="0.5" y1="1" x2="0.5" y2="0">
+                <stop offset="0%" stop-color="#9e661b"/>
+                <stop offset="60%" stop-color="#e5c158"/>
+                <stop offset="100%" stop-color="#fff8dc"/>
+              </linearGradient>
+
+              <linearGradient id="centerGlowGrad" x1="0.5" y1="0.5" x2="0.5" y2="0">
+                <stop offset="0%" stop-color="#ffffff"/>
+                <stop offset="60%" stop-color="#ffd700"/>
+                <stop offset="100%" stop-color="#ff8c00"/>
+              </linearGradient>
+
+              <filter id="goldGlow" x="-30%" y="-30%" width="160%" height="160%">
+                <feGaussianBlur stdDeviation="8" result="blur"/>
+                <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+              </filter>
+              
+              <filter id="intenseGlow" x="-50%" y="-50%" width="200%" height="200%">
+                <feGaussianBlur stdDeviation="15" result="blur1"/>
+                <feGaussianBlur stdDeviation="30" result="blur2"/>
+                <feMerge>
+                  <feMergeNode in="blur2"/>
+                  <feMergeNode in="blur1"/>
+                  <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+              </filter>
+            </defs>
+
+            <!-- Light Point & Stem -->
+            <circle id="stemLightPoint" cx="200" cy="460" r="4" fill="#fcedb4" filter="url(#goldGlow)"/>
+            <path id="stemPath" d="M 200 460 Q 198 330 200 210" fill="none" stroke="url(#stemGrad)" stroke-width="4.5" stroke-linecap="round"/>
+
+            <!-- Leaves (Stage 2) -->
+            <g id="leafLeft" class="lotus-leaf" transform-origin="198 360">
+              <path d="M 198 360 C 140 340 100 370 80 350 C 110 385 170 380 198 360 Z" fill="url(#leafGradLeft)" stroke="#3e6344" stroke-width="1"/>
+            </g>
+            <g id="leafRight" class="lotus-leaf" transform-origin="202 310">
+              <path d="M 202 310 C 260 290 300 320 320 300 C 290 335 230 330 202 310 Z" fill="url(#leafGradRight)" stroke="#3e6344" stroke-width="1"/>
+            </g>
+
+            <!-- Lotus Bloom Petals (Stage 3 - Animated Individually) -->
+            <g id="lotusFlowerGroup" transform="translate(200, 210)">
+
+              <!-- 1. Back Petal -->
+              <g id="petal1" class="lotus-petal petal-back" transform-origin="0 0">
+                <path d="M 0 0 C -25 -50 -20 -110 0 -130 C 20 -110 25 -50 0 0 Z" fill="url(#petalGradOuter)" stroke="rgba(212,175,55,0.6)" stroke-width="1"/>
+              </g>
+
+              <!-- 2. Left Petal -->
+              <g id="petal2" class="lotus-petal petal-left" transform-origin="0 0">
+                <path d="M 0 0 C -45 -30 -75 -75 -70 -105 C -35 -95 -10 -45 0 0 Z" fill="url(#petalGradOuter)" stroke="rgba(212,175,55,0.6)" stroke-width="1"/>
+              </g>
+
+              <!-- 3. Right Petal -->
+              <g id="petal3" class="lotus-petal petal-right" transform-origin="0 0">
+                <path d="M 0 0 C 45 -30 75 -75 70 -105 C 35 -95 10 -45 0 0 Z" fill="url(#petalGradOuter)" stroke="rgba(212,175,55,0.6)" stroke-width="1"/>
+              </g>
+
+              <!-- 4. Front-Left Petal -->
+              <g id="petal4" class="lotus-petal petal-front-left" transform-origin="0 0">
+                <path d="M 0 0 C -35 -20 -60 -55 -45 -85 C -20 -70 -5 -35 0 0 Z" fill="url(#petalGradInner)" stroke="rgba(255,215,0,0.7)" stroke-width="1"/>
+              </g>
+
+              <!-- 5. Front-Right Petal -->
+              <g id="petal5" class="lotus-petal petal-front-right" transform-origin="0 0">
+                <path d="M 0 0 C 35 -20 60 -55 45 -85 C 20 -70 5 -35 0 0 Z" fill="url(#petalGradInner)" stroke="rgba(255,215,0,0.7)" stroke-width="1"/>
+              </g>
+
+              <!-- 6. Inner Petals -->
+              <g id="petal6" class="lotus-petal petal-inner-center" transform-origin="0 0">
+                <path d="M 0 0 C -20 -25 -25 -65 0 -80 C 25 -65 20 -25 0 0 Z" fill="url(#petalGradInner)" stroke="#ffffff" stroke-width="1"/>
+              </g>
+
+              <!-- 7. Center Core / Bud Heart -->
+              <g id="petal7" class="lotus-petal petal-core" transform-origin="0 0">
+                <circle cx="0" cy="-35" r="16" fill="url(#centerGlowGrad)" filter="url(#goldGlow)"/>
+                <path d="M 0 0 C -10 -15 -10 -45 0 -55 C 10 -45 10 -15 0 0 Z" fill="#ffffff" opacity="0.9"/>
+              </g>
+
+            </g>
+          </svg>
+        </div>
+
+        <!-- Climax Emotional Text Sequence -->
+        <div id="climaxTextContainer" class="climax-text-wrap">
+          <h2 id="climax1" class="climax-line fade-text">"Keep Rising."</h2>
+          <h2 id="climax2" class="climax-line fade-text">"Keep Shining."</h2>
+          <h2 id="climax3" class="climax-line fade-text">"Keep Making Us Proud." ❤️</h2>
+          
+          <div id="climax4Group" class="climax-group fade-text">
+            <h1 class="climax-main-title">Happy Birthday, Kukki Dada!</h1>
+            <h3 class="climax-rank-title">
+              <span>Major Kumud Sety</span>
+              <svg class="indian-flag-icon" viewBox="0 0 36 24" width="24" height="16" aria-label="Indian Flag">
+                <rect width="36" height="8" fill="#FF9933"/>
+                <rect y="8" width="36" height="8" fill="#FFFFFF"/>
+                <rect y="16" width="36" height="8" fill="#138808"/>
+                <circle cx="18" cy="12" r="3" fill="none" stroke="#000080" stroke-width="0.8"/>
+              </svg>
+            </h3>
+            <p class="climax-subtext">
+              "No matter where life takes you,<br>
+              you'll always have your little brother cheering for you. ❤️"
+            </p>
+          </div>
+
+          <div id="climaxFinalBadge" class="climax-final-badge fade-text">
+            <span>Happy Birthday, Kukki Dada ❤️</span>
+            <svg class="indian-flag-icon" viewBox="0 0 36 24" width="22" height="15" aria-label="Indian Flag">
+              <rect width="36" height="8" fill="#FF9933"/>
+              <rect y="8" width="36" height="8" fill="#FFFFFF"/>
+              <rect y="16" width="36" height="8" fill="#138808"/>
+              <circle cx="18" cy="12" r="3" fill="none" stroke="#000080" stroke-width="0.8"/>
+            </svg>
+          </div>
+
+          <div class="replay-wrap">
+            <button id="replayBtn" class="btn-secondary">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M1 4v6h6M23 20v-6h-6"/>
+                <path d="M20.49 9A9 9 0 0 0 5.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 0 1 3.51 15"/>
+              </svg>
+              <span>Relive The Story</span>
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
