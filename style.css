@@ -906,24 +906,136 @@ html, body {
   opacity: 1;
 }
 
-/* Responsive Scaling for Mobile Screens */
-@media (max-width: 768px) {
-  #p1Line2 { font-size: 1.9rem; }
-  #p1Line3 { font-size: 1.4rem; }
-  .glow-text { font-size: 1.2rem; }
-  .section-title { font-size: 1.6rem; }
-  
-  .carousel-3d-wrapper { height: 360px; }
-  .carousel-track, .carousel-card { width: 260px; height: 320px; }
-  .carousel-nav-btn.prev-btn { left: 5px; }
-  .carousel-nav-btn.next-btn { right: 5px; }
-  
-  .letter-envelope-wrapper { padding: 24px 20px; }
-  .typing-text-body { font-size: 0.95rem; line-height: 1.6; }
-  
-  .lotus-stage-wrapper { width: 280px; height: 350px; }
-  .climax-line { font-size: 1.6rem; }
-  .climax-main-title { font-size: 1.8rem; }
-  .climax-rank-title { font-size: 1.1rem; }
-  .climax-subtext { font-size: 0.95rem; }
+/* ==========================================================================
+   COMPREHENSIVE MULTI-SCREEN RESPONSIVE BREAKPOINTS
+   Mobile (360px-430px), HD/1080p Laptops, QHD (1440p) & 4K Displays
+   ========================================================================== */
+
+/* 1. Mobile Phones (Compact, Standard, Large / Phablet: 360px to 480px) */
+@media (max-width: 480px) {
+  html, body {
+    height: 100dvh;
+  }
+
+  .page-section {
+    padding: 10px 8px;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  .music-toggle-btn {
+    top: 10px;
+    right: 12px;
+    padding: 6px 12px;
+    font-size: 0.65rem;
+  }
+
+  .starter-title {
+    font-size: 1.75rem;
+    margin-bottom: 24px;
+  }
+
+  .starter-text {
+    font-size: 1.05rem;
+    letter-spacing: 2px;
+  }
+
+  .open-surprise-btn {
+    padding: 14px 28px;
+    font-size: 0.92rem;
+    letter-spacing: 1px;
+  }
+
+  #p1Line1 { font-size: 1.05rem; letter-spacing: 1px; }
+  #p1Line2 { font-size: 1.6rem; line-height: 1.35; margin-bottom: 12px; }
+  #p1Line3 { font-size: 1.25rem; letter-spacing: 2px; margin-bottom: 20px; }
+  .birthday-glow-box { padding: 10px 16px; margin-bottom: 24px; }
+  .glow-text { font-size: 1.15rem; }
+  .btn-primary { padding: 12px 24px; font-size: 0.88rem; letter-spacing: 1px; }
+
+  .section-title { font-size: 1.35rem; }
+  .subtitle-tag { font-size: 0.65rem; letter-spacing: 2px; }
+
+  .carousel-3d-wrapper {
+    height: 240px;
+    margin: 10px 0 12px 0;
+    perspective: 800px;
+  }
+
+  .carousel-track, .carousel-card {
+    width: 170px;
+    height: 210px;
+    border-radius: 12px;
+  }
+
+  .carousel-nav-btn {
+    width: 34px;
+    height: 34px;
+  }
+
+  .carousel-nav-btn.prev-btn { left: 4px; }
+  .carousel-nav-btn.next-btn { right: 4px; }
+
+  .memories-line1 { font-size: 0.95rem; }
+  .memories-line2 { font-size: 0.88rem; margin-bottom: 10px; }
+
+  .letter-card-container { margin-bottom: 10px; }
+  .letter-envelope-wrapper { padding: 18px 14px; border-radius: 14px; }
+  .letter-wax-seal { width: 44px; height: 44px; top: -14px; right: 14px; }
+  .letter-header-preview { font-size: 1.1rem; margin-bottom: 8px; }
+  .letter-paper { max-height: 42vh; }
+  .typing-text-body { font-size: 0.88rem; line-height: 1.55; }
+
+  .lotus-stage-wrapper { width: 170px; height: 180px; }
+  .climax-line { font-size: 1.25rem; }
+  .climax-main-title { font-size: 1.45rem; }
+  .climax-rank-title { font-size: 0.95rem; letter-spacing: 1px; }
+  .climax-subtext { font-size: 0.82rem; line-height: 1.4; max-width: 310px; }
+  .climax-final-badge { padding: 6px 16px; font-size: 0.88rem; }
+}
+
+/* 2. Medium Mobile & Small Tablets (481px to 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .page-section { padding: 12px 14px; overflow-y: auto; }
+  .starter-title { font-size: 2.2rem; }
+  #p1Line2 { font-size: 2.0rem; }
+  .carousel-3d-wrapper { height: 260px; }
+  .carousel-track, .carousel-card { width: 190px; height: 230px; }
+  .lotus-stage-wrapper { width: 200px; height: 210px; }
+}
+
+/* 3. HD & Full HD Laptops/Monitors (1280px to 1919px) */
+@media (min-width: 1280px) and (max-width: 1919px) {
+  .carousel-3d-wrapper { height: 310px; margin: 15px 0; }
+  .carousel-track, .carousel-card { width: 220px; height: 265px; }
+}
+
+/* 4. Quad HD (QHD / 1440p Displays: 1920px to 2559px) */
+@media (min-width: 1920px) and (max-width: 2559px) {
+  .page-content { max-width: 1300px; }
+  .starter-title { font-size: 3.4rem; }
+  #p1Line2 { font-size: 3.2rem; }
+  .carousel-3d-wrapper { height: 380px; }
+  .carousel-track, .carousel-card { width: 280px; height: 330px; }
+  .lotus-stage-wrapper { width: 300px; height: 320px; }
+  .climax-line { font-size: 2.0rem; }
+  .climax-main-title { font-size: 2.5rem; }
+}
+
+/* 5. 4K Ultra HD (2560px and above) */
+@media (min-width: 2560px) {
+  .page-content { max-width: 1600px; }
+  .starter-title { font-size: 4.2rem; }
+  #p1Line2 { font-size: 4.0rem; }
+  #p1Line3 { font-size: 2.5rem; }
+  .glow-text { font-size: 2.2rem; }
+  .btn-primary { padding: 22px 54px; font-size: 1.4rem; }
+  .carousel-3d-wrapper { height: 480px; }
+  .carousel-track, .carousel-card { width: 360px; height: 430px; border-radius: 24px; }
+  .lotus-stage-wrapper { width: 400px; height: 420px; }
+  .climax-line { font-size: 2.6rem; }
+  .climax-main-title { font-size: 3.2rem; }
+  .climax-rank-title { font-size: 1.8rem; }
+  .climax-subtext { font-size: 1.4rem; max-width: 800px; }
+  .climax-final-badge { padding: 14px 36px; font-size: 1.6rem; }
 }
