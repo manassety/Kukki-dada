@@ -138,7 +138,12 @@ document.addEventListener('DOMContentLoaded', () => {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
   }
-  window.addEventListener('resize', resizeCanvas);
+  window.addEventListener('resize', () => {
+    resizeCanvas();
+    if (currentPage === 2) {
+      updateCarouselLayout();
+    }
+  });
   resizeCanvas();
 
   class Particle {
@@ -296,9 +301,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function updateCarouselLayout() {
     const angleStep = 360 / totalCards;
-    // Radial distances for circular orbit
-    const rx = window.innerWidth < 768 ? 140 : 250;
-    const rz = window.innerWidth < 768 ? 160 : 260;
+    const w = window.innerWidth;
+    
+    // Dynamic radial distances based on screen width ranges
+    let rx = 240;
+    let rz = 250;
+    let scaleBoost = 0.35;
+
+    if (w < 480) { // Mobile (360px - 430px)
+      rx = 110;
+      rz = 130;
+      scaleBoost = 0.32;
+    } else if (w < 768) { // Medium Mobile / Small Tablet
+      rx = 150;
+      rz = 170;
+      scaleBoost = 0.35;
+    } else if (w < 1440) { // HD / Standard Laptop
+      rx = 230;
+      rz = 240;
+      scaleBoost = 0.35;
+    } else if (w < 2560) { // QHD 1440p
+      rx = 320;
+      rz = 340;
+      scaleBoost = 0.38;
+    } else { // 4K Ultra HD
+      rx = 420;
+      rz = 450;
+      scaleBoost = 0.42;
+    }
 
     let closestIndex = 0;
     let maxZ = -Infinity;
@@ -313,7 +343,7 @@ document.addEventListener('DOMContentLoaded', () => {
       
       // Calculate scale, opacity & depth blur based on Z coordinate
       const zNorm = (z + rz) / (2 * rz); // 0 to 1
-      const scale = 0.65 + zNorm * 0.35; // 0.65 to 1.00
+      const scale = 0.65 + zNorm * scaleBoost;
       const opacity = 0.35 + zNorm * 0.65; // 0.35 to 1.0
       const blur = (1 - zNorm) * 4; // 0px to 4px blur
 
